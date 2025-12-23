@@ -69,7 +69,7 @@ function App() {
   }, [selectedCity, selectedStatus, allCameras]);
 
   const handleDeleteCamera = (id) => {
-    setCameras((prev) => prev.filter((cam) => cam.id !== id));
+    setAllCameras((prev) => prev.filter((cam) => cam.id !== id));
   };
 
   return (

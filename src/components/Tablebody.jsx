@@ -116,7 +116,7 @@ export default function TableBody({ cameras,onDeleteCamera }) {
         <div className="flex items-center gap-2">
           <button
             disabled={currentPage === 0}
-            onClick={() => setCurrentPage(1)}
+            onClick={() => setCurrentPage(0)}
             className="disabled:opacity-40"
           >
             ⏮
@@ -137,7 +137,7 @@ export default function TableBody({ cameras,onDeleteCamera }) {
           </button>
           <button
             disabled={currentPage === noOfPages-1}
-            onClick={() => setCurrentPage(noOfPages)}
+            onClick={() => setCurrentPage(noOfPages-1)}
             className="disabled:opacity-40"
           >
             ⏭
