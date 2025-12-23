@@ -17,7 +17,7 @@ function App() {
   const [selectedStatus, setSelectedStatus] = useState("");
 
   // LOGIC OF PAGINATION
-    const PAGE_SIZE=10
+    const [PAGE_SIZE,setPAGESIZE]=useState(10);
     const [currentPage, setCurrentPage] = useState(0);
 
     const noOfPages=Math.ceil(allCameras.length/PAGE_SIZE)
@@ -156,7 +156,7 @@ function App() {
           <TableBody start={start} end={end} cameras={filteredCameras} onDeleteCamera={handleDeleteCamera} />
         </table>
       </div>
-      <Pagination start={start} end={end} cameras={allCameras} currentPage={currentPage} noOfPages={noOfPages} setCurrentPage={setCurrentPage}/>
+      <Pagination setPAGESIZE={setPAGESIZE} start={start} end={end} cameras={allCameras} currentPage={currentPage} noOfPages={noOfPages} setCurrentPage={setCurrentPage}/>
     </div>
   );
 }

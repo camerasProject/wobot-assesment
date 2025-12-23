@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Pagination = ({start,end,cameras,currentPage,noOfPages,setCurrentPage}) => {
+const Pagination = ({setPAGESIZE,start,end,cameras,currentPage,noOfPages,setCurrentPage}) => {
     // const forward=()=>{
     //     setCurrentPage(prev=>prev+1)
     // }
@@ -14,10 +14,9 @@ const Pagination = ({start,end,cameras,currentPage,noOfPages,setCurrentPage}) =>
         <div className="flex items-center gap-2">
           <span>Rows per page</span>
           <select
-            // onChange={(e) => {
-            //   setRowsPerPage(Number(e.target.value));
-            //   setCurrentPage(1);
-            // }}
+            onChange={(e) => {
+              setPAGESIZE(Number(e.target.value));
+            }}
             className="border rounded px-2 py-1"
           >
             <option value={10}>10</option>
