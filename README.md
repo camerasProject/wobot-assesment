@@ -1,16 +1,46 @@
-# React + Vite
+📷 Camera Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Camera Management Dashboard built using React and Tailwind CSS, integrating with backend APIs secured by Bearer Token authentication.
+This application allows users to view, filter, and manage camera devices efficiently with a clean and responsive UI.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📋 Camera Listing
 
-## React Compiler
+View all cameras in a tabular format
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Displays camera name, health status, location, recorder, tasks, and current status
 
-## Expanding the ESLint configuration
+🔐 Secure API Integration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+All API requests are authenticated using Bearer Token
+
+Token-based authorization for protected endpoints
+
+🎯 Filters & Status Indicators
+
+Filter cameras by Location and Status
+
+Visual health indicators (icons & color-coded statuses)
+
+🎨 Modern UI
+
+Built with Tailwind CSS for fast and responsive styling
+
+Clean, minimal, and professional layout
+
+⚡ Optimized Performance
+
+Reusable components
+
+Optimized API calls
+
+Proper loading and error handling
+
+🛠 Tech Stack
+Technology	Description
+React	Frontend library for building UI
+Tailwind CSS	Utility-first CSS framework
+Axios / Fetch API	API communication
+Bearer Token Auth	Secure API access
+JavaScript (ES6+)	Core language
