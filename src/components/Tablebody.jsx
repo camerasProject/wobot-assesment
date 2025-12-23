@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-export default function TableBody({ cameras,onDeleteCamera }) {
-    // LOGIC OF PAGINATION
-    const PAGE_SIZE=10
-    const [currentPage, setCurrentPage] = useState(0);
+export default function TableBody({ start , end , cameras,onDeleteCamera }) {
+    // // LOGIC OF PAGINATION
+    // const PAGE_SIZE=10
+    // const [currentPage, setCurrentPage] = useState(0);
 
-    const noOfPages=Math.ceil(cameras.length/PAGE_SIZE)
-    console.log(noOfPages)
+    // const noOfPages=Math.ceil(cameras.length/PAGE_SIZE)
+    // console.log(noOfPages)
 
-    const start=currentPage*PAGE_SIZE;
-    const end= start+PAGE_SIZE;
+    // const start=currentPage*PAGE_SIZE;
+    // const end= start+PAGE_SIZE;
 
   return (
     <>
@@ -90,60 +90,7 @@ export default function TableBody({ cameras,onDeleteCamera }) {
       </tbody>
 
       {/* PAGINATION  */}
-      <div className="flex items-center justify-between px-6 py-3 border-t text-sm text-gray-600">
-        {/* Rows per page */}
-        <div className="flex items-center gap-2">
-          <span>Rows per page</span>
-          <select
-            // onChange={(e) => {
-            //   setRowsPerPage(Number(e.target.value));
-            //   setCurrentPage(1);
-            // }}
-            className="border rounded px-2 py-1"
-          >
-            <option value={10}>10</option>
-            <option value={25}>25</option>
-            <option value={50}>50</option>
-          </select>
-        </div>
-
-        {/* Page info */}
-        <div>
-          {start + 1}-{Math.min(end, cameras.length)} of {cameras.length}
-        </div>
-
-        {/* Controls */}
-        <div className="flex items-center gap-2">
-          <button
-            disabled={currentPage === 0}
-            onClick={() => setCurrentPage(0)}
-            className="disabled:opacity-40"
-          >
-            ⏮
-          </button>
-          <button
-            disabled={currentPage === 0}
-            onClick={() => setCurrentPage(currentPage - 1)}
-            className="disabled:opacity-40"
-          >
-            ◀
-          </button>
-          <button
-            disabled={currentPage === noOfPages-1}
-            onClick={() => setCurrentPage(currentPage + 1)}
-            className="disabled:opacity-40"
-          >
-            ▶
-          </button>
-          <button
-            disabled={currentPage === noOfPages-1}
-            onClick={() => setCurrentPage(noOfPages-1)}
-            className="disabled:opacity-40"
-          >
-            ⏭
-          </button>
-        </div>
-      </div>
+  
     </>
   );
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import TableHeader from "./components/Tableheader";
 import TableBody from "./components/Tablebody";
+import Pagination from "./components/Pagination";
 
 function App() {
   const token = "4ApVMIn5sTxeW7GQ5VWeWiy";
@@ -14,6 +15,17 @@ function App() {
 
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
+
+  // LOGIC OF PAGINATION
+    const PAGE_SIZE=10
+    const [currentPage, setCurrentPage] = useState(0);
+
+    const noOfPages=Math.ceil(allCameras.length/PAGE_SIZE)
+    console.log(noOfPages)
+
+    const start=currentPage*PAGE_SIZE;
+    const end= start+PAGE_SIZE;
+    
   const fetchCameras = async () => {
     try {
       const res = await axios.get(
@@ -141,9 +153,10 @@ function App() {
       <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white">
         <table className="w-full border-collapse text-sm">
           <TableHeader />
-          <TableBody cameras={filteredCameras} onDeleteCamera={handleDeleteCamera} />
+          <TableBody start={start} end={end} cameras={filteredCameras} onDeleteCamera={handleDeleteCamera} />
         </table>
       </div>
+      <Pagination start={start} end={end} cameras={allCameras} currentPage={currentPage} noOfPages={noOfPages} setCurrentPage={setCurrentPage}/>
     </div>
   );
 }
